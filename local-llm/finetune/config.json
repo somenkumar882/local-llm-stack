@@ -1,0 +1,18 @@
+{
+  "base_model": "mistralai/Mistral-7B-Instruct-v0.2",
+  "output_dir": "../checkpoints/lora-adapter",
+  "train_file": "../data/train.jsonl",
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
+  "epochs": 3,
+  "batch_size": 4,
+  "grad_accumulation": 4,
+  "learning_rate": 0.0002,
+  "max_seq_length": 1024,
+  "fp16": true,
+  "save_steps": 100,
+  "eval_steps": 100,
+  "logging_steps": 10
+}
